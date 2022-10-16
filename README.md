@@ -1,7 +1,7 @@
 # Crowdfunding-ETL
 
 ## Purpose
-Exercise challenge two demonstrate extracting data cleaning data creating an ERD and table schema and loading data. 
+Exercise challenge to demonstrate extracting data cleaning data creating an ERD and table schema and loading data. 
 
 ## Files
 ### Output Data Files (data) 
