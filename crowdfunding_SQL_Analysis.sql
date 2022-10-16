@@ -1,19 +1,19 @@
 -- Challenge Bonus queries.
 -- 1. (2.5 pts)
 -- Retrieve all the number of backer_counts in descending order for each `cf_id` for the "live" campaigns. 
+
+SELECT cf_id, backers_count
+FROM campaign
+WHERE outcome = 'live'
+ORDER BY backers_count DESC; 
+
+-- 2. (2.5 pts)
+-- Using the "backers" table confirm the results in the first query.
 SELECT backers.cf_id, count(backers.backer_id) 
 FROM campaign 
 INNER JOIN backers ON backers.cf_id = campaign.cf_id
 WHERE campaign.outcome = 'live'
 GROUP BY backers.cf_id
-ORDER BY count(*) DESC; 
-
--- 2. (2.5 pts)
--- Using the "backers" table confirm the results in the first query.
-
-SELECT cf_id, count(*)
-FROM backers 
-GROUP BY cf_id 
 ORDER BY count(*) DESC; 
 
 
@@ -43,7 +43,7 @@ ORDER BY "Remaining Goal Amount" DESC;
 ---------------------------------------------
 --- NOTE: Instruction are NOT very clear on sort order 
 --- in order to match the screenshot in the material 
----  SOMEONE NEEDS TO PROOF THESE EXERCISES - LOTS OF ERRORS AT TIMES  
+---  SOMEONE NEEDS TO PROOF THESE EXERCISES
 --- The screenshot in material is clearly NOT in email descending order.. 
 --- it is in last_name, first_name ASC and even then it has a error where 
 --- a row is switched...
@@ -59,4 +59,3 @@ ORDER BY bk.last_name, bk.first_name;
 -- Check the table
 SELECT * 
 FROM email_backers_remaining_goal_amount
-
